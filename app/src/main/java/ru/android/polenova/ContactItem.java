@@ -1,8 +1,6 @@
 package ru.android.polenova;
 
 import android.graphics.drawable.Drawable;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 
 public class ContactItem {
 

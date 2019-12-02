@@ -7,16 +7,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     private Random random = new Random();
-    private ContactAdapter adapter;
-    private List<Drawable> images;
-    private List<ContactItem> contacts;
+    private List<Drawable> images = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,25 +22,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fillImages();
-
-        initList();
-    }
-
-    private void initList() {
         ListView listView = findViewById(R.id.list);
-        contacts = generateRandomContactItem();
-        adapter = new ContactAdapter(this, contacts);
-        listView.setAdapter(adapter);
+        listView.setAdapter(new ContactAdapter(this, generateRandomContactItem()));
     }
 
     private List<ContactItem> generateRandomContactItem() {
-        return Arrays.asList(new ContactItem(
-                images.get(random.nextInt(images.size())),
-                "Call" + adapter.getCount(),
-                "Ivanov +79012345678",
-                random.nextBoolean()));
+        List<ContactItem> contacts = new ArrayList<>();
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Ivanov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Petrov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Sidorov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Pupkov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Ivanov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Petrov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Sidorov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Pupkov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        return contacts;
     }
-
 
     private void fillImages() {
         images.add(ContextCompat.getDrawable(MainActivity.this,
