@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ContactItem> generateRandomContactItem() {
         List<ContactItem> contacts = new ArrayList<>();
-        contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Ivanov +7900" + random.nextInt(9999999),random.nextBoolean()));
+        contacts.add(new ContactItem(images.get(random.nextInt(images.size())), "Звонок", "Пропущенный вызов от неизвестного контакта +7900" + random.nextInt(9999999), random.nextBoolean()));
         contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Petrov +7900" + random.nextInt(9999999),random.nextBoolean()));
         contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Sidorov +7900" + random.nextInt(9999999),random.nextBoolean()));
         contacts.add(new ContactItem(images.get(random.nextInt(images.size())),"Звонок","Pupkov +7900" + random.nextInt(9999999),random.nextBoolean()));
