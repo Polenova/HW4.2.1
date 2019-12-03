@@ -1,5 +1,4 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,29 +16,35 @@
 
     <TextView
         android:id="@+id/TextViewCall"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normalDP"
+        android:layout_marginEnd="@dimen/normalDP"
         android:text="@string/call"
+        app:layout_constraintEnd_toStartOf="@+id/ChekBoxSelect"
         app:layout_constraintStart_toEndOf="@+id/ImageViewIcon"
         app:layout_constraintTop_toTopOf="@+id/ImageViewIcon" />
 
     <TextView
         android:id="@+id/TextViewContact"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normalDP"
+        android:layout_marginEnd="@dimen/normalDP"
+        android:ellipsize="end"
         android:hint="@string/contact"
+        android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="@+id/ImageViewIcon"
+        app:layout_constraintEnd_toStartOf="@+id/ChekBoxSelect"
         app:layout_constraintStart_toEndOf="@+id/ImageViewIcon" />
 
     <CheckBox
         android:id="@+id/ChekBoxSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/TextViewContact"
+        android:layout_marginEnd="@dimen/normalDP"
+        app:layout_constraintBottom_toBottomOf="@+id/ImageViewIcon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/TextViewCall" />
+        app:layout_constraintTop_toTopOf="@+id/ImageViewIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
